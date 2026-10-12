@@ -39,3 +39,15 @@ Validation: 21 halaman HTML, satu H1 setiap halaman, fail/anchor dalaman tersedi
 - Jejak kebajikan dan muallaf memaut galeri asal sehingga batch media dibina. CTA perbincangan menuju Hubungi Kami, tiada Donate atau bank tambahan.
 
 Validation: 27 halaman HTML termasuk home, satu H1 setiap halaman dan semua fail/anchor tempatan tersedia. Enam teras diperiksa pada 1440px, 768px dan 390px tanpa overflow, gambar rosak atau ralat console. Navigasi Pendidikan→eBrelle dan home→Kelestarian Alam disahkan melalui UI.
+
+
+## Batch 4 — Media dan Galeri
+
+- `/media/`: direktori tujuh rekod dengan penapis Semua, Komuniti, Kebajikan dan Pendidikan Inklusif. Semua rekod tersedia tanpa JavaScript.
+- Lima route galeri asal dikekalkan, tambahan `/gallery/menyantuni-golongan-rentan-dan-kurang-upaya/` dan `/gallery/lawatan-yck-ke-mab/`.
+- 15 foto sebenar dipilih daripada PPTX slaid 28–33 dan 37; latar, logo dan ilustrasi slaid tidak dimasukkan sebagai foto aktiviti. WebP quality 87, sisi maksimum 2000px, kira-kira 2.35MB keseluruhan (asal PNG 27.19MB). Foto penuh tidak dipotong dalam galeri dan viewer.
+- `media.css`, `media.js`, `gallery.js`: penapis rekod, dialog foto penuh dengan sebelumnya/seterusnya, anak panah papan kekunci, Escape, tutup, fokus kembali dan kunci scroll. Galeri satu foto menyembunyikan kawalan anak panah. Tanpa JavaScript, pautan foto masih membuka fail imej.
+- Tarikh acara iftar 27 Mac 2025; tarikh penerbitan website asal lima galeri 24 April 2025 dilabel berasingan. Tiada tarikh acara lain yang direka. Tujuh ialah bilangan rekod galeri, bukan bilangan program yang berasingan. MAB kekal lawatan/perbincangan dan cadangan pusat latihan.
+- Navigasi semua halaman, pautan galeri home dan jejak komuniti pada teras menggunakan route baharu; halaman eBrelle memaut galeri lawatan MAB.
+
+Validation: 35 halaman HTML termasuk home, satu H1 dan semua fail/anchor tempatan tersedia. Lapan halaman baru disemak pada 1440px, 768px, 390px tanpa overflow atau gambar rosak. Penapis Pendidikan Inklusif, lightbox tiga/satu foto, next, ArrowRight, Escape dan pemulihan scroll/fokus diuji. Tiada ralat console.
