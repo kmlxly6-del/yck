@@ -28,3 +28,14 @@ Batch 1: /pengenalan/, /carta-organisasi/, /hubungi-kami/. Shared site.js and pa
 - Grafik SVG bagi program budaya, integrasi belia dan empat rancangan baharu mengelakkan penggunaan foto aktiviti lain sebagai bukti pelaksanaan.
 
 Validation: 21 halaman HTML, satu H1 setiap halaman, fail/anchor dalaman tersedia. Carian/kategori/perancangan/hasil kosong/reset lulus. Kesemua 16 butiran lulus semakan lebar 390px tanpa overflow atau gambar rosak; direktori dan halaman sampel turut disemak pada 768px dan 1440px.
+
+
+## Batch 3 — Enam Teras
+
+- Enam route `/teras-…/` dikekalkan daripada website asal. Pautan home dan Pengenalan kini menuju halaman dalaman.
+- `cores.css`: hero berikon dengan wave/halftone, navigasi enam teras, susunan aktiviti responsif, program berkaitan dan rekod komuniti jika tersedia.
+- Fokus dan perancangan daripada PPTX slaid 14–19. Senarai aktiviti dilabel sebagai hala tuju/perancangan, bukan semua sudah dilaksanakan.
+- Program berkaitan dipadankan mengikut kandungan. Antarabangsa hanya Gaza; Ekonomi memaut Kasih Mama, TVET Mikro dan Kampung Angkat. Tiada tiga kad sama yang diulang pada setiap teras.
+- Jejak kebajikan dan muallaf memaut galeri asal sehingga batch media dibina. CTA perbincangan menuju Hubungi Kami, tiada Donate atau bank tambahan.
+
+Validation: 27 halaman HTML termasuk home, satu H1 setiap halaman dan semua fail/anchor tempatan tersedia. Enam teras diperiksa pada 1440px, 768px dan 390px tanpa overflow, gambar rosak atau ralat console. Navigasi Pendidikan→eBrelle dan home→Kelestarian Alam disahkan melalui UI.
