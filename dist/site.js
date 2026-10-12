@@ -1,9 +1,3 @@
-const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#nav');
-function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Buka menu');menu.textContent='☰'}
-menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Tutup menu':'Buka menu');menu.textContent=open?'×':'☰'});
-nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
-matchMedia('(min-width:721px)').addEventListener('change',e=>{if(e.matches)closeMenu()});
 const header=document.querySelector('#site-header');const sentinel=document.createElement('span');sentinel.className='nav-sentinel';sentinel.setAttribute('aria-hidden','true');document.body.prepend(sentinel);
 new IntersectionObserver(([entry])=>header.classList.toggle('is-scrolled',!entry.isIntersecting),{rootMargin:'-90px 0px 0px 0px',threshold:0}).observe(sentinel);
 document.querySelector('#year').textContent=new Date().getFullYear();
