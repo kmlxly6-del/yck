@@ -11,3 +11,5 @@ Checked: desktop, 390px mobile and 768px tablet; slider navigation, program filt
 This preview has not replaced yck.vibrantad.com. The implementation can be adapted to the existing WordPress/Elementor site. Program statuses and contact details that require final confirmation remain documented in the content planning draft.
 
 Refinement: headings reduced, content width capped at 1080px, six outline core icons, decorative wave/halftone accents, floating navbar with compact scroll state (desktop 90→66px; mobile 74→58px). Verified at 390px, 768px and 1440px.
+
+Motion update: navbar size/logo morph over 480ms, translucent glass surfaces and hover/press states. Hero advances every 5000ms, with pause/play, hover/focus/dialog/visibility pauses, and reduced-motion support.
