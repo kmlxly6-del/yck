@@ -51,3 +51,10 @@ Validation: 27 halaman HTML termasuk home, satu H1 setiap halaman dan semua fail
 - Navigasi semua halaman, pautan galeri home dan jejak komuniti pada teras menggunakan route baharu; halaman eBrelle memaut galeri lawatan MAB.
 
 Validation: 35 halaman HTML termasuk home, satu H1 dan semua fail/anchor tempatan tersedia. Lapan halaman baru disemak pada 1440px, 768px, 390px tanpa overflow atau gambar rosak. Penapis Pendidikan Inklusif, lightbox tiga/satu foto, next, ArrowRight, Escape dan pemulihan scroll/fokus diuji. Tiada ralat console.
+
+
+## Final pages (batch 5)
+
+Article archive, 3 full articles, annual report directory and 5 policy pages implemented. All 44 internal routes plus homepage now exist. Article dates remain 22 May 2025; carbon headline corrected to carbon intensity per body. No report PDF was supplied by original source: cards use a real email request instead of fake downloads. Policies preserve source text as clearly marked migration drafts; incorrect organization name corrected, data-service and retail-policy mismatches disclosed for owner review. Primary navigation and footer use local routes.
+
+Validation: 45 HTML files checked for one H1, unique IDs and resolved local links/anchors. Ten final pages verified at 1440, 768 and 390 px with no horizontal overflow or broken images. Mobile menu, article reading navigation and report footer route verified; no browser console errors.
