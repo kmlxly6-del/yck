@@ -1,0 +1,12 @@
+const menu=document.querySelector('.menu-toggle'),nav=document.querySelector('#nav');
+function closeMenu(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Buka menu');menu.textContent='☰'}
+menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Tutup menu':'Buka menu');menu.textContent=open?'×':'☰'});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();menu.focus()}});
+matchMedia('(min-width:721px)').addEventListener('change',e=>{if(e.matches)closeMenu()});
+const header=document.querySelector('#site-header');const sentinel=document.createElement('span');sentinel.className='nav-sentinel';sentinel.setAttribute('aria-hidden','true');document.body.prepend(sentinel);
+new IntersectionObserver(([entry])=>header.classList.toggle('is-scrolled',!entry.isIntersecting),{rootMargin:'-90px 0px 0px 0px',threshold:0}).observe(sentinel);
+document.querySelector('#year').textContent=new Date().getFullYear();
+const copy=document.querySelector('#copy-bank');if(copy)copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('105190009489');document.querySelector('#copy-status').textContent='Nombor akaun berjaya disalin.'}catch{document.querySelector('#copy-status').textContent='Pilih dan salin nombor akaun 1051 9000 9489.'}});
+const coreIcons=[`<path d="M12 7.2C8.8 2.8 3 4.2 3 8.6c0 3.7 4.2 6.9 9 10.4 4.8-3.5 9-6.7 9-10.4 0-4.4-5.8-5.8-9-1.4Z"/><path d="m8 12 2.6 2.6L16 9.5"/>`, `<path d="M3 5c3-1 6-.5 9 1v15c-3-1.5-6-2-9-1V5Zm18 0c-3-1-6-.5-9 1v15c3-1.5 6-2 9-1V5Z"/><path d="M6 9h3m-3 4h3m6-4h3m-3 4h3"/>`, `<path d="M4 20h16M6 16v-5m6 5V7m6 9V3"/><path d="m4 7 5-3 5 1 6-3"/>`, `<circle cx="8" cy="7" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20v-3a5.5 5.5 0 0 1 11 0v3m1-5a4.5 4.5 0 0 1 7 3v2"/>`, `<path d="M19.5 3.5C9 2 3.5 8 5.5 14.5 7.5 21 21 20 19.5 3.5Z"/><path d="m3 22 12-13m-7 8v-5m4 1h5"/>`, `<circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6.5h14M5 17.5h14"/>`];
+document.querySelectorAll('[data-icon]').forEach(el=>{el.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${coreIcons[Number(el.dataset.icon)]}</svg>`});
