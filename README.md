@@ -15,3 +15,16 @@ Refinement: headings reduced, content width capped at 1080px, six outline core i
 Motion update: navbar size/logo morph over 480ms, translucent glass surfaces and hover/press states. Hero advances every 5000ms, with pause/play, hover/focus/dialog/visibility pauses, and reduced-motion support.
 
 Batch 1: /pengenalan/, /carta-organisasi/, /hubungi-kami/. Shared site.js and pages.css provide navigation, glass styling and mobile layouts. Profile photos and community photo are extracted from the supplied PPTX. Names use Roselan bin Abd Rahman (slide 6) and Abdul Aziz bin Ishak (slide 10); final spelling remains a content confirmation item. Contact uses only the official phone numbers/address and Affin account from slides 11/38; no unconfigured submission form is displayed.
+
+
+## Batch 2 — Program & Inisiatif
+
+- `/senaraiprojek/`: direktori 16 program dengan carian nama/fokus/penerima, kategori, status perancangan, kiraan hasil dan reset. Semua kad tersedia tanpa JavaScript. Filter disimpan dalam query URL.
+- 16 halaman butiran mengikut route dalam `program-data.js`; route lama `/projek_derma/` dikekalkan. Lima program tambahan menggunakan `/program/`.
+- `program-data.js` membekalkan home, `program.css` menyusun direktori/butiran, `program.js` mengawal penapis direktori. Hero home, kad home dan sorotan eBrelle menuju halaman lengkap.
+- eBrelle memuatkan kerjasama EDOTE dan lawatan MAB; pusat latihan kekal cadangan. Tiada tuntutan spesifikasi/kelulusan yang belum disahkan.
+- Dialisis dan enam rancangan lain ditandakan sebagai perancangan. Tarikh Integrasi Belia dikekalkan: Disember 2026 (slaid 24), September 2026 (slaid 25), tanpa menganggap dua fasa atau pencapaian.
+- Sasaran Kasih Mama 50 peserta, bukan pencapaian. Tiada jumlah subsidi, syarat permohonan atau lokasi program yang direka. Tiada Donate. Akaun Affin sahaja pada halaman sedia ada.
+- Grafik SVG bagi program budaya, integrasi belia dan empat rancangan baharu mengelakkan penggunaan foto aktiviti lain sebagai bukti pelaksanaan.
+
+Validation: 21 halaman HTML, satu H1 setiap halaman, fail/anchor dalaman tersedia. Carian/kategori/perancangan/hasil kosong/reset lulus. Kesemua 16 butiran lulus semakan lebar 390px tanpa overflow atau gambar rosak; direktori dan halaman sampel turut disemak pada 768px dan 1440px.
