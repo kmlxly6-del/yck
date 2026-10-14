@@ -1,0 +1,17 @@
+/* Horizontal logo: the cover box removes only transparent canvas margins. */
+header.floating-nav .brand{min-height:44px}
+header.floating-nav .brand img[src$="logo-horizontal.png"]{width:250px;height:auto;aspect-ratio:2000/378;object-fit:cover;object-position:center;max-width:none}
+header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:230px;height:auto}
+footer .footer-about>img[src$="logo-horizontal.png"]{width:min(320px,100%);height:auto;aspect-ratio:2000/378;object-fit:cover;object-position:center}
+@media(min-width:961px) and (max-width:1150px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:220px}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:200px}
+}
+@media(max-width:960px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:230px}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:220px}
+}
+@media(max-width:560px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:min(220px,calc(100vw - 146px))}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:min(200px,calc(100vw - 146px))}
+}

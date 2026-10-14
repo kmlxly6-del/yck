@@ -1,0 +1,91 @@
+/*
+  UX polish layer (audit ui-ux-pro-max, 13 Okt 2026).
+  Dimuatkan paling akhir pada setiap halaman. Hanya menetapkan "lantai"
+  kebolehcapaian: kontras, cincin fokus, saiz teks minimum dan sasaran sentuh.
+  !important digunakan kerana saiz asal ditetapkan dalam banyak media query
+  dengan specificity berbeza; jangan tambah gaya hiasan di sini.
+*/
+
+:root{
+  --muted:#5c6561;           /* 4.4:1 -> 5.2:1 pada latar #eeeee5 */
+  --focus:#174b89;
+  --text-label:11px;         /* label huruf besar / eyebrow */
+  --text-meta:13px;          /* metadata, kapsyen, pautan footer */
+  --text-control:13px;       /* butang, penapis, pautan tindakan */
+}
+@media(min-width:721px){:root{--text-label:12px;--text-meta:14px;--text-control:14px}}
+
+/* 1. Cincin fokus: oren lama hanya 2.2:1 pada latar kertas (perlu >=3:1). */
+:is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+  outline:3px solid var(--focus)!important;outline-offset:3px!important;
+  box-shadow:0 0 0 6px #fff!important;border-radius:6px
+}
+:is(.hero,.slide,.activity,.media-feature,.collab-dark) :is(a,button):focus-visible{
+  outline-color:#fff!important;box-shadow:0 0 0 6px #0b2a4d!important
+}
+.skip:focus{outline:3px solid var(--focus);z-index:100}
+
+/* 2. Label huruf besar (8-10px sebelum ini). */
+:is(.eyebrow,.hero-caption,.tag,.image-note,.media-record-label,.core-art-label,
+  .core-number,.vision-index,.nav-panel-label,.collab-tags span,.activity>div>span,
+  .gallery-facts span,.program-facts span,.phone-card span,.gallery-cover span,
+  .media-card-photo span,.core-tabs span,.article>small,.bank-card>span,
+  .directory-strip>span,#slide-count,.program-jump>span,figcaption>span,
+  .program-dates article span,.belia-components a>span){
+  font-size:var(--text-label)!important;
+}
+
+/* 3. Metadata & teks sokongan. */
+:is(figcaption,p.small,.person-card p,.bank-bottom p,.registration,.contact-help,
+  .footer-about small,.footer-bottom,.footer-bottom span,.directory-meta p,.media-count,
+  .article-meta,.article-meta time,.timeline span,.core-activities li>span,
+  .mission-line span,.nav-panel small,.media-card-bottom>span,.program-search label,
+  .program-status label,.breadcrumb,.breadcrumb a,.breadcrumb span,.archive-note,
+  footer a>small){
+  font-size:var(--text-meta)!important;
+}
+
+/* 4. Kawalan & pautan tindakan. */
+:is(.text-link,.filters button,.bank-bottom button,.pill,.profile-tabs a,.core-tabs a,
+  .footer-bottom a,.feature-link,.program-jump a,.nav-disclosure,.main-navigation>a,.nav-panel>a){
+  font-size:var(--text-control)!important;
+}
+.floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:13px!important}
+@media(min-width:961px) and (max-width:1100px){
+  .floating-nav .main-navigation{gap:12px!important}
+  .floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:12px!important}
+}
+
+/* 5. Sasaran sentuh minimum 44px (iOS HIG / WCAG 2.5.5). */
+.text-link{min-height:44px}
+.text-link span{width:44px!important;height:44px!important}
+.filters button{min-height:44px}
+.bank-bottom button{min-height:44px}
+.slide-controls>button{width:44px!important;height:44px!important;display:inline-grid;place-items:center}
+.slide-controls>button svg{width:18px;height:18px}
+.floating-nav .menu-toggle{width:44px!important;height:44px!important}
+.dots button{width:28px!important}
+.dots button:after{left:11px!important}
+.dots button.active:after{left:5px!important}
+.breadcrumb a,.footer-bottom a,.footer-bottom .top,.profile-tabs a,.core-tabs a{
+  display:inline-flex;align-items:center;min-height:44px
+}
+.breadcrumb{row-gap:0!important}
+.footer-bottom>div{row-gap:0!important}
+footer .footer-main a{display:flex;align-items:center;gap:.35em;min-height:44px;margin-bottom:0;font-size:var(--text-meta)}
+@media(pointer:fine){footer .footer-main a{min-height:34px}}
+.footer-bottom a,.footer-bottom .top{gap:.35em}
+.footer-bottom>div{column-gap:20px}
+summary{min-height:44px;display:flex;align-items:center;cursor:pointer}
+.policy-toc a{min-height:44px;display:flex;align-items:center}
+@media(max-width:720px){
+  .slide-controls{gap:4px!important}
+  .dots{gap:0!important}
+  .dots button{width:24px!important}
+  .dots button:after{left:9px!important}
+  .dots button.active:after{left:3px!important}
+  #slide-count{display:none}
+}
+
+/* 6. Kursor & maklum balas. */
+:is(button,[role=button],summary,label[for]){cursor:pointer}

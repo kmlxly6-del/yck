@@ -1,0 +1,62 @@
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.hero:focus-visible{outline:3px solid #739bd7;outline-offset:5px}
+.hero-copy-stage{display:grid;min-width:0}
+.hero-copy-stage .hero-copy{grid-area:1/1;min-width:0;width:100%;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .48s ease,transform .48s ease,visibility 0s;pointer-events:none}
+.hero-copy-stage .hero-copy.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.hero-title{font-size:48px;letter-spacing:-.065em;font-weight:var(--font-weight-heading,600);line-height:1.14}
+.hero-copy-stage .eyebrow{min-height:14px}
+.hero-copy-stage .hero-desc{min-height:64px;max-width:390px}
+.hero-copy-stage .hero-values{min-height:42px}
+.visual-slide{position:absolute;inset:0;isolation:isolate;opacity:0;visibility:hidden;transition:opacity .55s ease,visibility .55s;pointer-events:none}
+.visual-slide.is-active{opacity:1;visibility:visible;pointer-events:auto}
+.visual-slide .lifestyle{z-index:-2}
+.slider-controls{display:flex;align-items:center;gap:10px;border-top:1px solid #e7edf5;padding-top:17px;margin-top:25px;width:100%}
+.slider-controls[hidden]{display:none}
+.slider-button{width:44px;height:44px;min-width:44px;padding:0;border:1px solid #dbe4f0;border-radius:50%;display:grid;place-items:center;background:#fff;color:#5577a9;transition:background .2s,transform .2s}
+.slider-button:hover{background:#edf3fd;transform:translateY(-1px)}
+.slider-button svg{width:19px;height:19px;stroke-width:1.5}
+.slider-pause{background:#edf3fd;border-color:#edf3fd}
+.slider-pause[aria-pressed=true]{background:#dce8fb;color:#345481}
+.slider-count{font-size:13px;line-height:1.4;white-space:nowrap;letter-spacing:.02em;font-variant-numeric:tabular-nums;padding-inline:1px}
+.slider-count>span{color:#818a98;font-size:11px}
+.slider-progress{display:flex;gap:5px;flex:1;min-width:26px}
+.progress-segment{height:4px;flex:1;overflow:hidden;border-radius:6px;background:#e5ebf6}
+.progress-segment.is-current{background:#c9d9f3}
+.progress-fill{display:block;width:100%;height:100%;border-radius:6px;background:#8caee9;transform:scaleX(0);transform-origin:left}
+.progress-segment.is-past .progress-fill{transform:scaleX(1)}
+.project-visual{background:#d5e2f6}
+.project-visual .lifestyle{object-position:center;filter:saturate(.8)}
+.project-tint{position:absolute;inset:0;z-index:-1;background:linear-gradient(140deg,#cfddf5ba,transparent 64%),linear-gradient(0deg,#b9ccece6,transparent 30%)}
+.project-caption{position:absolute;left:24px;top:31px;max-width:calc(100% - 48px);width:330px;background:#ffffffed;border:1px solid #ffffffa8;padding:21px 23px;border-radius:21px;box-shadow:0 8px 28px #2c496516;transform:rotate(-2deg)}
+.project-kicker{font-size:9px;letter-spacing:.12em;color:#5c7294;display:block;margin-bottom:12px}
+.project-caption h3{font-size:25px;font-weight:var(--font-weight-heading,600);line-height:1.2;letter-spacing:-.04em;max-width:260px}
+.project-badge{display:inline-block;background:#e5edf9;color:#48638e;border-radius:30px;font-size:10px;margin-top:15px;padding:6px 11px}
+.project-dialisis .project-badge,.project-kampung .project-badge{background:#edf3e4;color:#526d3c}
+.project-target{position:absolute;left:24px;right:24px;bottom:52px;display:flex;align-items:center;gap:13px;background:#ffffffed;border:1px solid #ffffffb9;border-radius:20px;padding:15px;box-shadow:0 8px 28px #2c496516;transition:transform .2s}
+.project-target:hover{transform:translateY(-3px)}
+.project-target>span:nth-child(2){min-width:0}
+.project-target small{font-size:9px;letter-spacing:.06em;color:#5c7294;display:block;margin-bottom:3px}
+.project-target strong{font-size:13px;line-height:1.4;display:block;font-weight:500}
+.project-target>svg{margin-left:auto;width:21px;height:21px;color:#7194cb}
+.project-visual .visual-foot{font-size:8px;color:#344f77}
+.project-visual .visual-foot>span:last-child{max-width:57%;text-align:right;display:block}
+.project-ebrelle .lifestyle{object-position:55% center}
+.project-rmt .lifestyle{object-position:40% center}
+.project-kampung .lifestyle{object-position:50% center}
+@media(min-width:961px) and (max-width:1150px){.hero-title{font-size:42px}.slider-controls{gap:8px}.project-caption{left:21px;top:30px;width:290px;padding:20px}.project-caption h3{font-size:23px}.project-target{left:20px;right:20px}}
+@media(max-width:960px){.hero-copy-stage{width:min(100%,450px)}.hero-title{font-size:48px}.slider-controls{width:min(100%,450px)}.project-caption{top:30px;left:27px;width:315px}.project-target{left:27px;right:27px;bottom:49px}}
+@media(max-width:560px){
+ .hero-title{font-size:clamp(32px,9.25vw,42px)}
+ .hero-copy-stage .hero-desc{min-height:64px}
+ .hero-copy-stage .hero-values{min-height:38px}
+ .slider-controls{gap:7px;padding-top:15px;margin-top:21px}
+ .slider-count{font-size:12px}.slider-count>span{font-size:10px}
+ .slider-progress{gap:3px}.progress-segment{height:3px}
+ .project-caption{top:28px;left:18px;max-width:calc(100% - 36px);width:242px;padding:17px 19px}
+ .project-caption h3{font-size:23px}.project-kicker{font-size:8px;margin-bottom:9px}
+ .project-badge{font-size:9px;padding:5px 10px;margin-top:12px}
+ .project-target{left:18px;right:18px;bottom:46px;padding:12px;gap:10px;border-radius:16px}
+ .project-target .icon-disc{width:35px;height:35px}.project-target small{font-size:8px}.project-target strong{font-size:12px}
+ .project-visual .visual-foot{font-size:7px}
+}
+@media(prefers-reduced-motion:reduce){.visual-slide,.hero-copy-stage .hero-copy{transition:none;transform:none}.slider-button{transition:none}}

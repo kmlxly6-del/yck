@@ -1,0 +1,40 @@
+@import url("/theme-foundation.css?v=heading600");
+@import url("/logo.css?v=heading600");
+header.floating-nav{--blue:#496caa;position:fixed;z-index:30;top:22px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 112px));height:76px;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:26px;border:1px solid #ffffffc9;border-radius:100px;background:#fffffff0;box-shadow:0 10px 35px #54698714,inset 0 1px 0 #fff;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:height .35s,top .35s,box-shadow .35s}
+header.floating-nav .brand{flex-shrink:0;gap:0}
+header.floating-nav .brand img{width:126px;height:56px;object-fit:contain;transition:width .35s,height .35s}
+header.floating-nav .main-navigation{display:flex;align-items:center;gap:19px;font-size:12px}
+header.floating-nav .main-navigation>a,header.floating-nav .nav-disclosure{font-size:12px;font-weight:550;min-height:44px}
+header.floating-nav .nav-contact{border:1px solid #cdd6e5;border-radius:40px;background:#edf2fb;gap:12px!important;padding:10px 19px!important}
+header.floating-nav .nav-contact:hover{background:#dfeafa}
+header.floating-nav .nav-panel{background:#fffffff5;border-color:#e0e7f0}
+header.floating-nav .nav-panel>a{font-size:12px}
+header.floating-nav .nav-panel small{font-size:11px}
+header.floating-nav .nav-panel-label{font-size:10px}
+header.floating-nav .menu-toggle{border:0;background:transparent}
+header.floating-nav.is-scrolled{height:66px;top:12px;box-shadow:0 8px 28px #54698722}
+header.floating-nav.is-scrolled .brand img{width:112px;height:48px}
+/* Keep the main subjects visible in the supplied portrait images. */
+.project-image img[src*="inovasi-hq.webp"]{object-position:50% 70%}
+.project-image img[src*="rmt-hq.webp"]{object-position:50% 60%}
+.project-image img[src*="gaza-hq.webp"]{object-position:50% 50%}
+.project-image img[src*="dialisis-hq.webp"]{object-position:50% 55%}
+.standard-hero .inner-hero-visual img[src*="inovasi-hq.webp"]{object-position:50% 65%}
+.standard-hero .inner-hero-visual img[src*="rmt-hq.webp"]{object-position:50% 55%}
+.home-hero .project-visual .lifestyle[src*="gaza-hq.webp"],.home-hero .project-visual .lifestyle[src*="dialisis-hq.webp"]{object-position:50% 50%}
+.home-hero .project-visual .lifestyle[src*="rmt-hq.webp"]{object-position:50% 55%}
+@media(min-width:961px) and (max-width:1150px){header.floating-nav{width:calc(100% - 80px);padding-inline:22px;gap:15px}
+header.floating-nav .brand img{width:112px;height:50px}
+header.floating-nav .main-navigation{gap:12px}
+header.floating-nav .main-navigation>a,header.floating-nav .nav-disclosure{font-size:11px}
+header.floating-nav .nav-contact{padding-inline:14px!important}}
+@media(max-width:960px){header.floating-nav{width:calc(100% - 64px);height:68px;top:18px;padding:8px 21px}
+header.floating-nav .brand img{width:112px;height:50px}
+header.floating-nav .main-navigation{display:none;align-items:stretch;gap:0;top:calc(100% + 9px);background:#fffffff5}
+header.floating-nav .main-navigation.open{display:flex}
+header.floating-nav .main-navigation>a,header.floating-nav .nav-disclosure{font-size:13px;min-height:48px}
+header.floating-nav .nav-contact{margin-top:14px}}
+@media(max-width:560px){header.floating-nav{top:13px;width:calc(100% - 36px);height:62px;padding:7px 17px}
+header.floating-nav .brand img{width:102px;height:45px}
+header.floating-nav.is-scrolled{height:58px;top:9px}
+header.floating-nav.is-scrolled .brand img{width:96px;height:42px}}

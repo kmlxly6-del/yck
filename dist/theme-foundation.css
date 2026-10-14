@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&display=swap');
+:root{
+ --color-page:#fafbfc;--color-surface:#fff;--color-ink:#252725;--color-muted:#5a625f;
+ --color-powder:#e4eafa;--color-highlight:#ccdcf5;--color-action:#95b7ee;--color-action-hover:#bed3f4;--color-on-action:#233c60;
+ --color-link:#476998;--color-sage:#f0f4e7;--color-border:#d8e1ee;
+ --font-body:'DM Sans',sans-serif;--font-display:'DM Sans',sans-serif;--font-weight-heading:600;
+ --radius-section:32px;--radius-card:24px;--radius-control:999px;
+ --paper:var(--color-page);--ink:var(--color-ink);--muted:var(--color-muted);--blue:var(--color-link);--line:var(--color-border);--powder:var(--color-powder);
+ --focus:#365e98;
+}
+body{background:var(--color-page);color:var(--color-ink);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-display);font-weight:var(--font-weight-heading,600);letter-spacing:-.045em}
+::selection{background:var(--color-highlight)}
+.svg-library{position:absolute;width:0;height:0;overflow:hidden}
+.pill,.button,.nav-contact,.bank-bottom button,.filters button{backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none;background-image:none;transition:background .2s,transform .2s,color .2s}
+.pill,.button{border-radius:var(--radius-control);min-height:46px;font-weight:500}
+.pill.blue,.button-blue,.bank-bottom button{background:var(--color-action);color:var(--color-on-action);border:1px solid transparent;box-shadow:none}
+.pill.blue:hover,.button-blue:hover,.bank-bottom button:hover{background:var(--color-action-hover);color:var(--color-on-action);box-shadow:none}
+.pill.white,.button-white{background:var(--color-surface);color:var(--color-ink)}
+.pill.outline,.button-outline{background:transparent;border:1px solid #cdd6e5;color:var(--color-ink)}
+.pill.outline:hover,.button-outline:hover{background:#edf2fb}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:0 20px;font-size:13px;line-height:1.4;white-space:nowrap}
+.button svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.filters button{background:#fff;border-color:var(--color-border);font-weight:500}
+.filters button.active{background:var(--color-action);color:var(--color-on-action);border-color:var(--color-action);box-shadow:none}
+.filters button:hover{background:#e8f0fd;border-color:#a9c3ec}
+.menu-toggle{box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.text-link{font-weight:500}
+.text-link span{background:#fff;border-color:var(--color-border);box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
+.text-link:hover{color:var(--color-link)}
+footer{background:#e9effa;color:var(--color-ink)}
+header.floating-nav.is-scrolled{width:min(1100px,calc(100% - 112px))}
+@media(min-width:961px) and (max-width:1150px){header.floating-nav.is-scrolled{width:calc(100% - 80px)}}
+@media(max-width:960px){header.floating-nav.is-scrolled{width:calc(100% - 64px)}}
+@media(max-width:560px){header.floating-nav.is-scrolled{width:calc(100% - 36px)}}
+.footer-bottom{border-color:#d2ddec}
+.foundation strong,.bank-card>strong,.directory-strip strong,.timeline strong{font-family:var(--font-display);font-weight:500}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pill,.button,.nav-contact,.bank-bottom button,.filters button,header.floating-nav,header.floating-nav .brand img{transition:none}}

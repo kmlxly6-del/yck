@@ -1,0 +1,136 @@
+/* Centered composition, compact hero and the shared YCK pill navigation. */
+html{scroll-padding-top:114px}
+.page-shell{width:min(1184px,calc(100% - 96px));max-width:none;padding:0;margin:122px auto 0}
+.nav-sentinel{position:absolute;top:0;left:0;width:1px;height:1px;pointer-events:none}
+.floating-nav{--blue:#496caa;position:fixed;z-index:30;top:22px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 112px));height:76px;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:26px;border:1px solid #ffffffc9;border-radius:100px;background:#fffffff0;box-shadow:0 10px 35px #54698714,inset 0 1px 0 #fff;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:height .35s,top .35s,box-shadow .35s}
+.floating-nav .brand{flex-shrink:0;gap:0}
+.floating-nav .brand img{width:126px;height:56px;object-fit:contain;transition:width .35s,height .35s}
+.floating-nav .main-navigation{display:flex;align-items:center;gap:19px;font-size:12px}
+.floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:12px;font-weight:550;min-height:44px}
+.floating-nav .nav-contact{border:1px solid #cdd6e5;border-radius:40px;background:#edf2fb;gap:12px!important;padding:10px 19px!important}
+.floating-nav .nav-contact:hover{background:#dfeafa}
+.floating-nav .nav-panel{background:#fffffff5;border-color:#e0e7f0}
+.floating-nav .nav-panel>a{font-size:12px}
+.floating-nav .nav-panel small{font-size:11px}
+.floating-nav .nav-panel-label{font-size:10px}
+.floating-nav .menu-toggle{border:0;background:transparent}
+.floating-nav.is-scrolled{height:66px;top:12px;box-shadow:0 8px 28px #54698722}
+.floating-nav.is-scrolled .brand img{width:112px;height:48px}
+.hero{grid-template-columns:minmax(0,46fr) minmax(0,54fr);gap:18px;padding:14px;min-height:568px;border-radius:32px}
+.visual-panel{border-radius:23px;overflow:hidden}
+.lifestyle{top:0;left:0;width:100%;height:100%;object-position:62% center}
+.copy-panel{padding:32px 34px;justify-content:center;border-radius:23px}
+.hero-copy{padding-top:0}
+.eyebrow{margin-bottom:19px}
+h1{font-size:48px}
+.heading-line{margin-bottom:7px;gap:9px}
+.heading-arrow{width:48px;height:48px}
+.heading-arrow svg{width:30px;height:30px}
+.hero-desc{margin-top:21px;font-size:14px}
+.hero-values{margin-top:11px;font-size:11px}
+.hero-actions{margin-top:23px;gap:24px}
+.community-line{margin-top:0;padding-top:26px}
+.mission-note{top:50px;left:23px;width:217px;padding:16px}
+.focus-note{top:209px;left:33px;width:273px;padding:10px;gap:10px}
+.focus-note strong{font-size:13px}
+.care-note{top:295px;left:23px;font-size:10px}
+.photo-note{bottom:45px;left:30px;width:185px}
+.photo-note img{height:110px}
+.photo-note>span{font-size:8px;gap:5px}
+.visual-foot{left:22px;right:16px;bottom:11px;font-size:9px}
+.concept-label{font-size:7px}
+.focus-section{padding:40px 28px 36px}
+.section-head h2{font-size:29px}
+.focus-card{min-height:316px}
+.together-strip{margin-inline:28px}
+footer{padding-inline:28px}
+@media(min-width:961px) and (max-width:1150px){
+  .page-shell{width:calc(100% - 64px)}
+  .floating-nav{width:calc(100% - 80px);padding-inline:22px;gap:15px}
+  .floating-nav .brand img{width:112px;height:50px}
+  .floating-nav .main-navigation{gap:12px}
+  .floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:11px}
+  .floating-nav .nav-contact{padding-inline:14px!important}
+  .hero{gap:14px;min-height:550px}
+  .copy-panel{padding:26px}
+  h1{font-size:42px}
+  .heading-pill{padding-inline:11px}
+  .heading-pill.outline{padding-inline:13px}
+  .hero-actions{gap:18px}
+  .mission-note{left:20px;width:202px}
+  .focus-note{left:26px;width:255px}
+  .care-note{left:20px;font-size:9px}
+  .photo-note{left:25px;width:172px}
+}
+@media(max-width:960px){
+  .page-shell{width:calc(100% - 48px);margin-top:106px}
+  .floating-nav{width:calc(100% - 64px);height:68px;top:18px;padding:8px 21px}
+  .floating-nav .brand img{width:112px;height:50px}
+  .floating-nav .main-navigation{display:none;align-items:stretch;gap:0;top:calc(100% + 9px);background:#fffffff5}
+  .floating-nav .main-navigation.open{display:flex}
+  .floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:13px;min-height:48px}
+  .floating-nav .nav-contact{margin-top:14px}
+  .hero{display:flex;flex-direction:column;gap:14px;padding:12px;min-height:0}
+  .copy-panel{order:0;padding:32px;align-items:center}
+  .hero-copy,.community-line{width:min(100%,450px)}
+  .hero-copy{padding-top:0}
+  h1{font-size:48px}
+  .visual-panel{order:1;min-height:480px}
+  .lifestyle{object-position:center 52%}
+  .mission-note{top:54px;left:27px;width:218px}
+  .focus-note{top:211px;left:43px;width:285px}
+  .care-note{display:none}
+  .photo-note{left:36px;bottom:39px;width:188px}
+  .photo-note img{height:106px}
+  .section-head h2{font-size:26px}
+  .focus-section{padding:34px 22px}
+  .focus-grid{gap:15px}
+  .card-bottom h3{font-size:21px}
+  .together-strip{margin-inline:22px;flex-wrap:wrap}
+  .together-strip h2{font-size:24px}
+  .together-strip .button{margin-left:auto}
+  footer{padding-inline:22px;flex-wrap:wrap}
+}
+@media(max-width:560px){
+  html{scroll-padding-top:94px}
+  .page-shell{width:calc(100% - 28px);margin-top:95px}
+  .floating-nav{top:13px;width:calc(100% - 36px);height:62px;padding:7px 17px}
+  .floating-nav .brand img{width:102px;height:45px}
+  .floating-nav.is-scrolled{height:58px;top:9px}
+  .floating-nav.is-scrolled .brand img{width:96px;height:42px}
+  .hero{gap:10px;padding:10px;border-radius:26px}
+  .copy-panel{padding:26px 20px;align-items:stretch;border-radius:19px}
+  .eyebrow{font-size:8px;letter-spacing:.07em;margin-bottom:18px}
+  h1{font-size:clamp(32px,9.25vw,42px)}
+  .heading-line{gap:7px;margin-bottom:7px}
+  .heading-pill{padding-inline:9px;padding-bottom:4px}
+  .heading-pill.outline{padding-inline:11px}
+  .heading-arrow{width:40px;height:40px}
+  .heading-arrow svg{width:25px;height:25px}
+  .hero-desc{font-size:13px;margin-top:19px}
+  .hero-values{font-size:10px;line-height:1.9}
+  .hero-actions{gap:17px;margin-top:22px}
+  .hero-actions .button{padding-inline:14px;font-size:10px;gap:11px}
+  .hero-actions .text-link{font-size:10px;gap:8px}
+  .community-line{padding-top:23px;gap:11px}
+  .community-line p{font-size:9px}
+  .visual-panel{min-height:410px;border-radius:19px}
+  .lifestyle{object-position:62% center}
+  .mission-note{top:28px;left:16px;width:180px;padding:14px}
+  .mission-note p{font-size:12px}
+  .focus-note{top:158px;left:24px;width:247px;padding:9px}
+  .focus-note strong{font-size:12px}
+  .photo-note{left:25px;bottom:37px;width:165px}
+  .photo-note img{height:96px}
+  .photo-note>span{font-size:7px}
+  .visual-foot{left:16px;right:14px;bottom:10px;font-size:7px}
+  .concept-label{font-size:6px}
+  .focus-section{padding:29px 12px}
+  .section-head h2{font-size:23px}
+  .focus-card{min-height:315px}
+  .card-bottom h3{font-size:27px}
+  .together-strip{margin-inline:12px}
+  .together-strip h2{font-size:22px}
+  .together-strip .button{margin-left:56px}
+  footer{padding-inline:12px}
+}
