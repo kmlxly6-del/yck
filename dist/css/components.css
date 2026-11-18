@@ -1,0 +1,202 @@
+/* YCK components — navigation, logo, accessibility floor and labels. Loaded on all 45 pages.
+   Edit these files directly; do not add override stylesheets. See docs/design-system.md. */
+/* ===== Navigation: disclosure menus and mobile drawer ===== */
+.floating-nav .main-navigation>a,.nav-disclosure{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.nav-disclosure{padding:0;background:transparent;border:0}.nav-disclosure svg{width:14px;height:14px;transition:transform .25s}.nav-disclosure[aria-expanded=true] svg{transform:rotate(180deg)}.nav-group{position:relative}.nav-disclosure:hover,.nav-disclosure.is-current,.main-navigation>a[aria-current],.main-navigation>a.is-current{color:var(--blue)}.nav-disclosure.is-current:before,.main-navigation>a[aria-current]:before{content:"";width:4px;height:4px;border-radius:50%;background:var(--blue);flex-shrink:0}.floating-nav .main-navigation .nav-contact{margin-left:0}.floating-nav .main-navigation .nav-contact span{margin-left:7px}.nav-panel{position:absolute;top:calc(100% + 17px);left:-22px;width:310px;border:1px solid #ffffffc9;border-radius:var(--radius-card);padding:10px;backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);box-shadow:inset 0 1px 0 #fff,0 16px 38px #09212b22;animation:nav-enter .2s ease both}.nav-panel>a{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 13px;border-radius:var(--radius-card);line-height:1.5;white-space:normal;transition:background .2s,color .2s}.nav-panel>a:hover,.nav-panel>a[aria-current]{background:#e5edf3;color:var(--blue)}.nav-panel small{color:var(--muted);font-weight:400}.nav-panel-label{padding:17px 13px 6px;border-top:1px solid var(--line);margin-top:8px}.floating-nav.is-scrolled .nav-panel{top:calc(100% + 12px)}.menu-toggle .menu-line{display:block;width:16px;height:1.5px;background:currentColor;position:absolute;left:50%;top:50%;transition:transform .25s;transform:translate(-50%,-4px)}.menu-toggle .menu-line+.menu-line{transform:translate(-50%,3px)}.menu-toggle[aria-expanded=true] .menu-line{transform:translate(-50%,-50%) rotate(45deg)}.menu-toggle[aria-expanded=true] .menu-line+.menu-line{transform:translate(-50%,-50%) rotate(-45deg)}@keyframes nav-enter{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:961px){.floating-nav .menu-toggle{display:none}.floating-nav .main-navigation{position:static;background:transparent;box-shadow:none;padding:0}.floating-nav.is-scrolled .main-navigation .nav-contact{padding:9px 16px}}
+@media(max-width:960px){.floating-nav .menu-toggle{display:block;flex-shrink:0;position:relative}.floating-nav .main-navigation{position:absolute;inset:auto 0 auto;padding:14px 18px 20px;flex-direction:column;border:1px solid #ffffffc9;border-radius:var(--radius-card);max-height:calc(100svh - 120px);overflow-y:auto;overscroll-behavior:contain;backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%);box-shadow:inset 0 1px 0 #fff,0 16px 38px #09212b22}.floating-nav .main-navigation.open{display:flex;animation:nav-enter .2s ease both}.floating-nav .main-navigation>a,.nav-disclosure{width:100%;justify-content:space-between;padding:14px 8px;border-bottom:1px solid var(--line);border-radius:0}.nav-group{border-bottom:1px solid var(--line)}.nav-disclosure{border-bottom:0}.floating-nav .main-navigation>a:after{display:none}.nav-disclosure.is-current:before,.main-navigation>a[aria-current]:before{display:none}.floating-nav .main-navigation .nav-contact,.floating-nav.is-scrolled .main-navigation .nav-contact{margin:15px 0 0;border-radius:var(--radius-section);border:1px solid #b8c8d5;justify-content:center}.nav-panel,.floating-nav.is-scrolled .nav-panel{position:static;width:100%;margin:0 0 12px;padding:6px;box-shadow:none;border:0;border-radius:var(--radius-card);backdrop-filter:none}.nav-panel>a{min-height:44px;padding:11px 12px}.nav-panel-label{margin-top:6px;padding:14px 12px 6px}}
+
+/* ===== Accessibility floor: focus ring, minimum text sizes, 44px touch targets ===== */
+
+/* 1. Cincin fokus: oren lama hanya 2.2:1 pada latar kertas (perlu >=3:1). */
+:is(a,button,input,select,textarea,summary,[tabindex]):focus-visible{
+  outline:3px solid var(--focus);outline-offset:3px;
+  box-shadow:0 0 0 6px #fff;border-radius:var(--radius-control)}
+:is(.hero,.slide,.activity,.media-feature,.collab-dark) :is(a,button):focus-visible{
+  outline-color:#fff;box-shadow:0 0 0 6px #0b2a4d
+}
+.skip:focus{outline:3px solid var(--focus);z-index:100}
+/* 2. Label huruf besar (8-10px sebelum ini). */
+:is(.eyebrow,.hero-caption,.tag,.image-note,.media-record-label,.core-art-label,
+  .core-number,.vision-index,.nav-panel-label,.collab-tags span,.activity>div>span,
+  .gallery-facts span,.program-facts span,.phone-card span,.gallery-cover span,
+  .media-card-photo span,.core-tabs span,.article>small,.bank-card>span,
+  .directory-strip>span,#slide-count,.program-jump>span,figcaption>span,
+  .program-dates article span,.belia-components a>span){
+  font-size:var(--text-label);
+}
+/* 3. Metadata & teks sokongan. */
+:is(figcaption,p.small,.person-card p,.bank-bottom p,.registration,.contact-help,
+  .footer-about small,.footer-bottom,.footer-bottom span,.directory-meta p,.media-count,
+  .article-meta,.article-meta time,.timeline span,.core-activities li>span,
+  .mission-line span,.nav-panel small,.media-card-bottom>span,.program-search label,
+  .program-status label,.breadcrumb,.breadcrumb a,.breadcrumb span,.archive-note,
+  footer a>small){
+  font-size:var(--text-meta);
+}
+/* 4. Kawalan & pautan tindakan. */
+:is(.text-link,.filters button,.bank-bottom button,.pill,.profile-tabs a,.core-tabs a,
+  .footer-bottom a,.feature-link,.program-jump a,.nav-disclosure,.main-navigation>a,.nav-panel>a){
+  font-size:var(--text-control);
+}
+.floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:13px}
+@media(min-width:961px) and (max-width:1100px){
+  .floating-nav .main-navigation>a,.floating-nav .nav-disclosure{font-size:12px}
+}
+/* 5. Sasaran sentuh minimum 44px (iOS HIG / WCAG 2.5.5). */
+.text-link{min-height:44px}
+.text-link span{width:44px;height:44px}
+.filters button{min-height:44px}
+.bank-bottom button{min-height:44px}
+.floating-nav .menu-toggle{width:44px;height:44px}
+.breadcrumb a,.footer-bottom a,.footer-bottom .top,.profile-tabs a,.core-tabs a{
+  display:inline-flex;align-items:center;min-height:44px
+}
+.breadcrumb{row-gap:0}
+.footer-bottom>div{row-gap:0}
+footer .footer-main a{display:flex;align-items:center;gap:.35em;min-height:44px;margin-bottom:0;font-size:var(--text-meta)}
+@media(pointer:fine){footer .footer-main a{min-height:34px}}
+.footer-bottom a,.footer-bottom .top{gap:.35em}
+.footer-bottom>div{column-gap:20px}
+summary{min-height:44px}
+.policy-toc a{min-height:44px;display:flex;align-items:center}
+/* 6. Kursor & maklum balas. */
+:is(button,[role=button],summary,label[for]){cursor:pointer}
+
+/* ===== Navigation: floating pill header ===== */
+
+header.floating-nav{--blue:#496caa;position:fixed;z-index:30;top:22px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 112px));height:76px;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:26px;border:1px solid #ffffffc9;border-radius:var(--radius-control);background:#fffffff0;box-shadow:0 10px 35px #54698714,inset 0 1px 0 #fff;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:height .35s,top .35s,box-shadow .35s}
+header.floating-nav .brand{flex-shrink:0;gap:0}
+header.floating-nav .brand img{transition:width .35s,height .35s}
+header.floating-nav .main-navigation{display:flex;align-items:center;gap:19px;font-size:12px}
+header.floating-nav .main-navigation>a,header.floating-nav .nav-disclosure{font-weight:550;min-height:44px}
+header.floating-nav .nav-contact{border:1px solid #cdd6e5;border-radius:var(--radius-control);background:#edf2fb;gap:12px;padding:10px 19px}
+header.floating-nav .nav-contact:hover{background:#dfeafa}
+header.floating-nav .nav-panel{background:#fffffff5;border-color:#e0e7f0}
+header.floating-nav .menu-toggle{border:0;background:transparent}
+header.floating-nav.is-scrolled{height:66px;top:12px;box-shadow:0 8px 28px #54698722}
+header.floating-nav.is-scrolled .brand img{width:112px;height:48px}
+/* Keep the main subjects visible in the supplied portrait images. */
+.project-image img[src*="inovasi-hq.webp"]{object-position:50% 70%}
+.project-image img[src*="rmt-hq.webp"]{object-position:50% 60%}
+.project-image img[src*="gaza-hq.webp"]{object-position:50% 50%}
+.project-image img[src*="dialisis-hq.webp"]{object-position:50% 55%}
+.standard-hero .inner-hero-visual img[src*="inovasi-hq.webp"]{object-position:50% 65%}
+.standard-hero .inner-hero-visual img[src*="rmt-hq.webp"]{object-position:50% 55%}
+.home-hero .project-visual .lifestyle[src*="gaza-hq.webp"],.home-hero .project-visual .lifestyle[src*="dialisis-hq.webp"]{object-position:50% 50%}
+.home-hero .project-visual .lifestyle[src*="rmt-hq.webp"]{object-position:50% 55%}
+@media(min-width:961px) and (max-width:1150px){header.floating-nav{width:calc(100% - 80px);padding-inline:22px;gap:15px}
+header.floating-nav .main-navigation{gap:12px}
+header.floating-nav .nav-contact{padding-inline:14px}}
+@media(max-width:960px){header.floating-nav{width:calc(100% - 64px);height:68px;top:18px;padding:8px 21px}
+header.floating-nav .main-navigation{display:none;align-items:stretch;gap:0;top:calc(100% + 9px);background:#fffffff5}
+header.floating-nav .main-navigation.open{display:flex}
+header.floating-nav .main-navigation>a,header.floating-nav .nav-disclosure{min-height:48px}}
+@media(max-width:560px){header.floating-nav{top:13px;width:calc(100% - 36px);height:62px;padding:7px 17px}
+header.floating-nav.is-scrolled{height:58px;top:9px}
+header.floating-nav.is-scrolled .brand img{width:96px;height:42px}}
+
+/* ===== Logo sizing ===== */
+
+/* Horizontal logo: the cover box removes only transparent canvas margins. */
+header.floating-nav .brand{min-height:44px}
+header.floating-nav .brand img[src$="logo-horizontal.png"]{width:250px;height:auto;aspect-ratio:2000/378;object-fit:cover;object-position:center;max-width:none}
+header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:230px;height:auto}
+footer .footer-about>img[src$="logo-horizontal.png"]{width:min(320px,100%);height:auto;aspect-ratio:2000/378;object-fit:cover;object-position:center}
+@media(min-width:961px) and (max-width:1150px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:220px}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:200px}
+}
+@media(max-width:960px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:230px}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:220px}
+}
+@media(max-width:560px){
+ header.floating-nav .brand img[src$="logo-horizontal.png"]{width:min(220px,calc(100vw - 146px))}
+ header.floating-nav.is-scrolled .brand img[src$="logo-horizontal.png"]{width:min(200px,calc(100vw - 146px))}
+}
+
+/* ===== Labels: sentence case, 12px floor, AI-image disclosure ===== */
+
+/* Labels: sentence case, no tracking, one size, one colour.
+   Text is now written in sentence case in the HTML; these rules remove the
+   wide tracking that was built for all-caps strings. */
+html body .eyebrow,
+html .home-page #hero-carousel .eyebrow,
+html .inner-page .standard-hero .eyebrow,
+html .inner-page .standard-hero .media-feature .eyebrow,
+html body .reading-card .eyebrow,
+html body .policy-toc .eyebrow {
+  font-size: var(--label-size);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.45;
+  color: var(--label-color);
+}
+html body .nav-panel-label,
+html body .media-record-label,
+html body .project-kicker,
+html body .core-art-label,
+html body .core-tabs a > span {
+  font-size: var(--label-size-small);
+  letter-spacing: 0;
+}
+html body .nav-panel-label { color: var(--color-muted, #5a625f); }
+/* Readable-size floor: nothing on the page below 12px. */
+html body .card-tag,
+html body .tag,
+html body .collab-tags,
+html body .image-note,
+html body .slider-count,
+html body .slider-count *,
+html body .project-badge,
+html body .home-hero .note-sign,
+html body .home-hero .care-note,
+html body .home-hero .focus-note small,
+html body .home-hero .project-target small,
+html body .home-hero .visual-foot {
+  font-size: var(--label-size-small);
+  letter-spacing: 0;
+}
+/* The AI-concept disclosure must be readable, not 6–8px. */
+html body .home-hero .concept-label {
+  font-size: var(--label-size-small);
+  letter-spacing: 0;
+  opacity: 1;
+  font-weight: 500;
+  background: rgba(255, 255, 255, .86);
+  color: #2f4366;
+  padding: 3px 9px;
+  border-radius:var(--radius-control);
+}
+/* Small screens: the image footer keeps only the disclosure (first span);
+   the decorative caption is dropped so the larger labels do not collide. */
+@media (max-width: 560px) {
+  html body .home-hero .visual-foot > span:last-child:not(:first-child) { display: none; }
+}
+/* The decorative core-art label repeated the hero eyebrow ("Teras n daripada 6")
+   on the same screen; the art panel is aria-hidden, so drop the duplicate. */
+html body .core-art-label { display: none; }
+/* Lift the shared label token (was 11px on phones) and catch the
+   identity-panel note label that sat at 8–9px. */
+html .inner-page .standard-hero .brand-hero-note > span,
+html body .breadcrumb,
+html body .breadcrumb * {
+  font-size: var(--label-size-small);
+  letter-spacing: 0;
+}
+/* Phone-size captions, breadcrumbs and small indices that inherited 11px. */
+html .inner-page .standard-hero .breadcrumb,
+html .inner-page .standard-hero .breadcrumb a,
+html .inner-page .standard-hero .breadcrumb span,
+html .inner-page .standard-hero :is(figcaption, .gallery-cover > span),
+html body .home-hero .mission-note p,
+html body .viewer-toolbar > span,
+html body .mission-line > span,
+html body .timeline span,
+html body .vision-index,
+html body .program-components li > span,
+html body :is(.about-hero-photo, .inner-hero-photo, .program-hero-image) > span {
+  font-size: var(--label-size-small);
+  letter-spacing: 0;
+}

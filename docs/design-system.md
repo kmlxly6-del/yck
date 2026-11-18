@@ -33,14 +33,20 @@ Sasaran sentuh kawalan sekurang-kurangnya 44px, fokus jelas, teks HTML dan alt g
 
 ## Fail implementasi
 
-- `theme-foundation.css`: token warna, font, bentuk dan komponen asas.
-- `global-theme.css`: navbar bersama, digunakan pada 45 halaman.
-- `hero.css` dan `hero.js`: hero homepage berasaskan prototype, discoped kepada `.home-hero`.
-- `home.css` dan `home-layout.css`: susunan dan kad homepage.
-- `inner-theme.css`: hero, panel bacaan, kad program/organisasi/media, galeri, laporan dan dasar pada semua 44 halaman dalaman. Dimuatkan selepas template asal supaya struktur dan interaksi sedia ada kekal.
-- `hero-standard.css`: token ukuran bersama dan template hero seragam pada semua 45 halaman, dimuatkan terakhir. `standard-hero`, `inner-hero-copy` dan `inner-hero-visual` menjadi struktur hero dalaman.
-- `ux-polish.css`: lantai aksesibiliti sedia ada dikekalkan.
+CSS dikonsolidasi pada 18 November 2026: semua 45 halaman memuat empat fail dari `dist/css/` mengikut susunan ini.
+
+- `tokens.css`: satu-satunya sumber token warna, tipografi, label (`--label-size` 13px, `--label-size-small` 12px), radius dan geometri hero.
+- `base.css`: reset, tipografi asas, butang/pill, footer dan utiliti (`[hidden]`, reduced motion).
+- `components.css`: navbar terapung, panel nav, logo, cincin fokus, sasaran sentuh 44px dan lantai saiz label/meta (asal `ux-polish.css` + `design-refine.css`).
+- `page-home.css`: homepage (`body.home-page`): hero slider, kad fokus, seksyen bawah.
+- `page-inner.css`: semua 44 halaman dalaman (`body.inner-page`, ditambah `program-page`, `core-page`, `media-page` atau `editorial-page`): hero standard, panel bacaan, program/teras, media/galeri, artikel dan dasar.
+
+Skala radius: `--radius-section` 32px, `--radius-card` 24px, `--radius-control` pill, ditambah `50%` untuk bulatan dan `0`. Pengecualian yang diluluskan: highlight ayat home (8px), lengkung atas bentuk arch, dan panel hero mobile 17px (token `--hero-panel-radius`). `!important` hanya untuk `[hidden]`, reduced motion dan empat peraturan lantai saiz teks. Jangan tambah stylesheet baharu yang override; ubah fail di atas.
 
 Style pastel kini digunakan pada semua 45 halaman. Hero dalaman menggunakan bingkai biru dan panel putih; butiran program/teras/galeri menggunakan dua panel pada desktop dan satu kolum pada mobile. Artikel dan dasar menggunakan panel bacaan putih dengan lebar teks terkawal. Navbar desktop kekal pill lebar, dan footer dibingkai dengan ruang sisi yang sama.
 
 Semua heading H1–H6, tajuk hero, seksyen dan kad menggunakan token `--font-weight-heading:600`. Komponen menggunakan token bersama supaya perubahan weight global kekal konsisten.
+
+## Label dan saiz minimum (audit 18 November 2026)
+
+Label/eyebrow ditulis dalam sentence case tanpa letter-spacing (13px desktop, 12px mobile, warna `--color-link`). Tiada huruf besar penuh kecuali akronim dan nama penerima akaun bank. Tiada teks di bawah 12px, termasuk label atas foto. Nombor (01/02/03) hanya untuk kandungan yang benar-benar berurutan. Meta tidak disambung dengan " · "; guna titik bertindih atau ayat. Font dimuat melalui `<link>` DM Sans variable dalam `<head>`, bukan `@import`. Lihat `docs/audit-frontend-design-2026-11-18.md`.
