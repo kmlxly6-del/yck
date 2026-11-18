@@ -200,3 +200,8 @@ html body :is(.about-hero-photo, .inner-hero-photo, .program-hero-image) > span 
   font-size: var(--label-size-small);
   letter-spacing: 0;
 }
+
+/* Keep faces and the exhibition table in frame on portrait article covers. */
+img.article-photo-portrait {
+  object-position: center 67%;
+}
