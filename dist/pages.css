@@ -6,3 +6,14 @@
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{transition:none!important;animation:none!important}}
 
 .note-copy > p + p { margin-top: 16px; }
+
+.contact-emails { margin-top: 28px; }
+.contact-emails ul { list-style: none; padding: 0; margin: 8px 0 0; }
+.contact-emails a {
+  display: inline-block;
+  padding-block: 10px;
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
